@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d15"
+  },
+  "Last name": "Nguyen",
+  "full - name": "Nguyen Van A",
+  "number phone": 54648498,
+  "address": "12 Phan Chau Trinh",
+  "type of products": "Tablets"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d16"
+  },
+  "Last name": "Tran",
+  "full - name": "Tran Thi Nga",
+  "number phone": 48949498,
+  "address": "107 Le Thanh Tong",
+  "type of products": "Cell Phones"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d17"
+  },
+  "Last name": "Nguyen",
+  "full - name": "Nguyen Thi Hoa",
+  "number phone": 49797449,
+  "address": "110 Tran Thanh Tong",
+  "type of products": "Cell Phones"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d18"
+  },
+  "Last name": "Nguyen",
+  "full - name": "Nguyen Tien Nam",
+  "number phone": 45495944,
+  "address": "11 Le Van Viet",
+  "type of products": "Tablets"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d19"
+  },
+  "Last name": "Trinh",
+  "full - name": "Trinh Hoai Duc",
+  "number phone": 65931464,
+  "address": "10 Trinh Hoai Duc",
+  "type of products": "Laptops"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d1a"
+  },
+  "Last name": "Tran",
+  "full - name": "Tran Phu",
+  "number phone": 54649123,
+  "address": "17 Nguyen Hue",
+  "type of products": "Laptops"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d1b"
+  },
+  "Last name": "Le",
+  "full - name": "Le Van Viet",
+  "number phone": 54994949,
+  "address": "9 Phan Boi Chau",
+  "type of products": "Tablets"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d1c"
+  },
+  "Last name": "Le",
+  "full - name": "Le Van Chi",
+  "number phone": 65595654,
+  "address": "23 Nguyen Tat Thanh",
+  "type of products": "Laptops"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d1d"
+  },
+  "Last name": "Nguyen",
+  "full - name": "Nguyen Nguyen Tuong",
+  "number phone": 59949978,
+  "address": "45 Nguyen Phi",
+  "type of products": "Laptops"
+},{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d1e"
+  },
+  "Last name": "Phan",
+  "full - name": "Phan Quang Tien",
+  "number phone": 65977976,
+  "address": "104 Ho Tung Mau",
+  "type of products": "Cell Phones"
+}]

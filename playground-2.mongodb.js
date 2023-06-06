@@ -1,59 +1,72 @@
-/* global use, db */
-// MongoDB Playground
-// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+// Last-name, full - name, number phone, address, type of products
 
-const database = '2';
-const collection = 'sales';
+//if not, vscode will create database auto matically 
+use('Name database')
+//create collection
+db.createCollection('Name colection')
+//add data
+//EX:
+db.getCollection('Name collection').insertMany([{
+  "_id": {
+    "$oid": "647e8507c97b2beb4d919d15"
+  },
+  "Last name": "Nguyen",
+  "full - name": "Nguyen Van A",
+  "number phone": 54648498,
+  "address": "12 Phan Chau Trinh",
+  "type of products": "Tablets"
+}])
+//funtion find many CTM
+db.getCollection('Name Collection').find({"full - name": "Tran Phu"})
+//if u want fine one object ctm
+db.getCollection('Name Collection').findOne({"full - name": "Tran Phu"})
+//sort for id
+db.getCollection('Name Collection').find().sort({"_id" :"1"})
 
-// Create a new database.
-use(database);
+// total number of Tablets buyer CTM
+ // 1 . away
+ db.getCollection('Name Collection').aggregate([
+   {$match : {"type of products": "Tablets"}},
+   { $group: { _id: null, total: { $sum: 1 } } }
+ ])
+ // 2 . away
+ db.getCollection('Name collection').aggregate([
+   { $match: { "type of products": "Tablets" } },
+   { $count: "total" }
+ ])
 
-// Create a new collection.
-db.createCollection(collection);
+//unwind PRO
+db.getCollection('name collection').aggregate([
+  { $match: { "name": "iPad 16GB Wifi" } },
+  { $unwind: "$sizes" }
+])
+// create user with highest authority
+db.createUser({
+  user: "Toan", 
+  pwd: "123456", 
+  roles:[{ role: "root", db: "admin"}]
+})
 
-db.getCollection(collection).insertMany([
-  { 'item': 'Bia Tiger', 'price': 10, 'quantity': 2, 'date': new Date('2014-03-01T08:00:00Z') },
-  { 'item': 'Coca', 'price': 20, 'quantity': 1, 'date': new Date('2014-03-01T09:00:00Z') },
-  { 'item': 'Pepsi', 'price': 5, 'quantity': 10, 'date': new Date('2014-03-15T09:00:00Z') },
-  { 'item': 'Bia heliken', 'price': 5, 'quantity': 20, 'date': new Date('2014-04-04T11:21:39.736Z') },
-  { 'item': 'Keo ngot', 'price': 10, 'quantity': 10, 'date': new Date('2014-04-04T21:23:13.331Z') },
-  { 'item': 'Banh mi', 'price': 7.5, 'quantity': 5, 'date': new Date('2015-06-04T05:08:13Z') },
-  { 'item': 'Khau trang', 'price': 7.5, 'quantity': 10, 'date': new Date('2015-09-10T08:43:00Z') },
-  { 'item': 'Keo', 'price': 10, 'quantity': 5, 'date': new Date('2016-02-06T20:20:13Z') },
-]);
+//update
+db.getCollection('name collection').updateMany(
+  { "name": "iPad 16GB Wifi" },
+  { $set: { "sizes": ["S", "M", "L", "XL"] } }
+)
 
-db.createCollection('Purchase');
-//purchase source
-db.getCollection('Purchase').insertMany([
-  { 'item': 'Bia Tiger', 'Pur': 'Dai Li Sai Gon', 'Pur' : 'Dai Li Da Nang' },
-  { 'item': 'Coca', 'Pur': 'Dai Li Sai Gon' },
-  { 'item': 'Pepsi', 'Pur': 'Dai Li Sai Gon' },
-  { 'item': 'Bia Heliken', 'Pur': 'Dai Li Ha Noi' },
-  { 'item': 'Keo Ngot', 'Pur': 'Dai Li Sai Gon' },
-  { 'item': 'Banh Mi', 'Pur': 'Dai Li Ha Noi' },
-  { 'item': 'Khau Trang', 'Pur': 'Dai Li Ha Noi' },
-  { 'item': 'Keo chua', 'Pur': 'Dai Li Sai Gon' },
-]);
+//Add a fields
+db.getCollection('name collection').updateMany({}, { $set: { "newField": "newValue" } })
+  // EX add many
+  db.getCollection('name collection').updateMany({}, { $set: { "branch": "TP.HCM" } })
+ // Ex add one 
+ db.getCollection('name collection').updateOne({ "name": "iPad 16GB Wifi"}, { $set: { "newField": "newValue" } })
 
-// Run a find command to view items sold on April 4th, 2014.
-db.getCollection('sales').find({
-  date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') }
-}).count();
+//sum of price ipad 16gb wifi
+ db.getCollection('name collection').aggregate([
+  {$match: { "name": "iPad 16GB Wifi"}},
+  { $group: { _id: null, total: { $sum: "$price" } } }
+ ])
 
-// Here we run an aggregation and open a cursor to the results
-
-db.getCollection('sales').aggregate([
-    // Find all of the sales that occurred in 2014.
-    { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
-    // Group the total sales for each product.
-    { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
-]);
-
-
-db.getCollection('Purchase').find({
-  Pur: 'Dai Li Da Nang'
-});
-// phan quyen
-
-
-
+ //sort of name
+ db.getCollection('name collection').aggregate([
+  { $sort: { "name": -1 } }
+])

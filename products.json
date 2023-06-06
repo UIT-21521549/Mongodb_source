@@ -1,0 +1,99 @@
+[{
+  "_id": {
+    "$oid": "644505890b2cbcc43224d539"
+  },
+  "name": "iPad 16GB Wifi",
+  "manufacturer": "Apple",
+  "category": "Tablets",
+  "price": 499,
+  "quantity": 7,
+  "sizes": [
+    "S",
+    "M",
+    "L"
+  ]
+},{
+  "_id": {
+    "$oid": "644505fa0b2cbcc43224d53a"
+  },
+  "name": "iPad 32GB Wifi",
+  "manufacturer": "Apple",
+  "category": "Tablets",
+  "price": 599,
+  "quantity": 13,
+  "sizes": [
+    "null"
+  ]
+},{
+  "_id": {
+    "$oid": "644506ab0b2cbcc43224d53b"
+  },
+  "name": "iPad 64GB Wifi",
+  "manufacturer": "Apple",
+  "category": "Tablets",
+  "price": 699,
+  "quantity": 12
+},{
+  "_id": {
+    "$oid": "6445070a0b2cbcc43224d53c"
+  },
+  "name": "Galaxy S3",
+  "category": "Cell Phones",
+  "manufacturer": "Samsung",
+  "price": 563.99,
+  "quantity": 20
+},{
+  "_id": {
+    "$oid": "6445073e0b2cbcc43224d53d"
+  },
+  "name": "Galaxy Tab 10",
+  "category": "Tablets",
+  "manufacturer": "Samsung",
+  "price": 450.99,
+  "quantity": 8
+},{
+  "_id": {
+    "$oid": "644507560b2cbcc43224d53e"
+  },
+  "name": "Vaio",
+  "category": "Laptops",
+  "manufacturer": "Sony",
+  "price": 499,
+  "quantity": 16
+},{
+  "_id": {
+    "$oid": "644507680b2cbcc43224d53f"
+  },
+  "name": "Macbook Air 13inch",
+  "category": "Laptops",
+  "manufacturer": "Apple",
+  "price": 499,
+  "quantity": 25
+},{
+  "_id": {
+    "$oid": "644507770b2cbcc43224d540"
+  },
+  "name": "Nexus 7",
+  "category": "Tablets",
+  "manufacturer": "Google",
+  "price": 199,
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "644507ed0b2cbcc43224d541"
+  },
+  "name": "Kindle Paper White",
+  "category": "Tablets",
+  "manufacturer": "Amazon",
+  "price": 129,
+  "quantity": 7
+},{
+  "_id": {
+    "$oid": "644508020b2cbcc43224d542"
+  },
+  "name": "Kindle Fire",
+  "category": "Tablets",
+  "manufacturer": "Amazon",
+  "price": 199,
+  "quantity": 10
+}]
