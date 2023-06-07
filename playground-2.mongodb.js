@@ -70,3 +70,28 @@ db.getCollection('name collection').updateMany({}, { $set: { "newField": "newVal
  db.getCollection('name collection').aggregate([
   { $sort: { "name": -1 } }
 ])
+//join take price
+//name collection 1 = name collection cusomer
+//name collection 2 = name collection cusomer
+db.collection('name collection1').aggregate([
+  {
+    $lookup: {
+      from: 'name collection2',
+      localField: 'category',
+      foreignField: 'type of products',
+      as: 'Name device'
+    }
+  },
+  {
+    $unwind: '$Name device'
+  },
+  {
+    $project: {
+      'Name device.price': 1
+    }
+  }
+]).toArray(function(err, res) {
+  if (err) throw err;
+  console.log(res);
+});
+
